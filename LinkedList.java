@@ -27,7 +27,7 @@ public class LinkedList<E> implements Stack, Queue{
 		}
 		else if (index == size) {
 			tail.setNextPointer(newNode);
-			tail = tail.getNextPointer();
+			tail = newNode;
 		}
 		else {
 			ListNode<E> holderNode = head;
@@ -93,7 +93,7 @@ public class LinkedList<E> implements Stack, Queue{
 		
 		String str = "[";
 		
-		for (ListNode<E> i = head; i.getNextPointer() != null; i = i.getNextPointer()) {
+		for (ListNode<E> i = head; i != null; i = i.getNextPointer()) {
 			str += i + ", ";
 		}
 		
@@ -109,6 +109,7 @@ public class LinkedList<E> implements Stack, Queue{
 		linkedlist.add("First");
 		linkedlist.add("Second");
 		linkedlist.add("Third");
+		linkedlist.add(0, "Fourth");
 		
 		System.out.println(linkedlist);
 	}
