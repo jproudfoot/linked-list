@@ -1,3 +1,9 @@
+/*
+ * Jack Proudfoot
+ * November 29, 2015
+ * 
+ * An object used to encapsulate data for storage in a LinkedList.
+ */
 
 public class ListNode <E>{
 	private E object;
@@ -16,6 +22,11 @@ public class ListNode <E>{
 	ListNode(E object, ListNode<E> pointer) {
 		this.object = object;
 		this.next = pointer;
+	}
+	
+	ListNode(ListNode<E> node) {
+		this.object = node.getObject();
+		this.next = null;
 	}
 	
 	public String toString () {
